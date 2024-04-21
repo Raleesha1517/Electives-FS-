@@ -2,10 +2,20 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
+use Illuminate\Support\Facades\App;
+ 
+Route::get('/{locale}', function (string $locale) {
+    if (! in_array($locale, ['en', 'sn','tm'])) {
+        abort(400);
+    }
+ 
+    App::setLocale($locale);
     return view('welcome');
+    
 });
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
