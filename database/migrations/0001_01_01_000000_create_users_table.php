@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('usertype')->default('user');
+            $table->unsignedInteger('phn_number')->default(DB::raw('1000000 + (id - 1) * 4'));
             $table->rememberToken();
             $table->timestamps();
         });

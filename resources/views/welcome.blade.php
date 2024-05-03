@@ -31,7 +31,7 @@
        @endforeach --}}
 
         <li style="margin-right: 10px;"><a href="/awareness" class="btn-get-started scrollto">English</a></li>
-        <li style="margin-right: 10px;"><a href="/awareness" class="btn-get-started scrollto">Sinhala</a></li>
+        <li style="margin-right: 10px;" ><a href="/awareness" class="btn-get-started scrollto" id="sinhala">සිංහල</a></li>
         <li><a href="/awareness" class="btn-get-started scrollto">Tamil</a></li>
       </ul>
       

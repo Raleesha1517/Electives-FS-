@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
@@ -25,7 +24,7 @@ Route::middleware(LocalizationMiddleware::class)
         Route::get('/awareness', function () {
             return view('awareness');
         });
-        
+
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->middleware(['auth', 'verified'])->name('dashboard');
@@ -40,10 +39,13 @@ Route::middleware(LocalizationMiddleware::class)
 
         Route::middleware(['auth',Admin::class])->group(function () {
             Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+            Route::get('admin/doctors',[AdminController::class,'doctorsAdd']);
+            Route::post('admin/doctors',[AdminController::class,'doctorsPost']);
         });
 
         Route::middleware(['auth',Doctor::class])->group(function () {
             Route::get('doctors/dashboard',[DoctorController::class,'index'])->name('doctors.dashboard');
+            Route::get('patient',[DoctorController::class,'index1'])->name('doctors.dashboard');
         });
 
         Route::middleware(['auth',User::class])->group(function () {

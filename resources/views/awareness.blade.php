@@ -2,30 +2,323 @@
 
 @section('content')
 
+
+
 <section id="hero" class="d-flex align-items-center">
 
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-      <h1 style="font-weight: 500">{{__('awareness.title')}}</h1>
-      <h1 tyle="font-weight: 500">උණ වලිප්පුව</h1>
-      <h1 tyle="font-weight: 100">காய்ச்சல் வலிப்பு</h1>
-      <h2>Select Your Language | ඔබේ භාෂාව තෝරන්න | உங்கள் மொழியைத் தேர்ந்தெடுக்கவும் </h2>
-      <ul style="list-style: none; padding: 0; margin: 0; display: flex;">
-        <li style="margin-right: 10px;"><a href="#about" class="btn-get-started scrollto">English</a></li>
-        <li style="margin-right: 10px;"><a href="#about" class="btn-get-started scrollto">Sinhala</a></li>
-        <li><a href="#about" class="btn-get-started scrollto">Tamil</a></li>
-      </ul>
-      
-      {{-- <a href="#about" class="btn-get-started scrollto">English</a>
-      <a href="#about" class="btn-get-started scrollto">Sinhala</a>
-      <a href="#about" class="btn-get-started scrollto">Tamil</a> --}}
+      <h1 style="font-weight: 400;" id="sinhala">{{__('awareness.title')}}</h1>
       <img src="assets/img/mother.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
     </div>
 
-  </section><!-- End Hero -->
+</section>
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="container" >
+          <div class="row row-cols-1 row-cols-md-2 g-3">
+            <div class="col">
+              <div class="card" style="height: 14rem !important; ">
+                <div class="row">
+                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                    <div class="card-body">
+                      <h5 class="card-title" id="sinhala">{{__('awareness.what_title')}}</h5>
+                      <p class="card-text" id="sinhala">{{__('awareness.what_content1')}} {{__('awareness.what_content2')}}</p>
+                      <a href="#what" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
+                    </div>
+                  </div>
+                  <div class="col-md-3 "> <!-- Image column, order first on medium and larger, first on mobile -->
+                    <img src="assets/img/cards/question.png" class="img-fluid img-md1" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat the above div for each additional card -->
+            <div class="col">
+              <div class="card" style="height: 14rem !important;">
+                <div class="row">
+                  <div class="col-md-8"> <!-- Text column, order last on medium and larger, last on mobile -->
+                    <div class="card-body">
+                      <h5 class="card-title" id="sinhala">{{__('awareness.recognize_title')}}</h5>
+                      <p class="card-text" id="sinhala">{{__('awareness.recognize_content1')}}{{__('awareness.recognize_content2')}} </p>
+                      <a href="#recognize" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
+                    </div>
+                  </div>
+                  <div class="col-md-4"> <!-- Image column, order first on medium and larger, first on mobile -->
+                    <img src="assets/img/cards/recognize.png" class="img-fluid img-md2" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat the above div for each additional card -->
+            <div class="col">
+              <div class="card" style="height: 14rem !important;">
+                <div class="row">
+                  
+                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                    <div class="card-body">
+                      <h5 class="card-title" id="sinhala">{{__('awareness.should_title')}}</h5>
+                      <p class="card-text" id="sinhala">{{__('awareness.should_content1')}} {{__('awareness.should_content2')}}</p>
+                      <a href="#should" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
+                    </div>
+                  </div>
+                  <div class="col-md-3"> <!-- Image column, order first on medium and larger, first on mobile -->
+                    <img src="assets/img/cards/should.png" class="img-fluid img-md3" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat the above div for each additional card -->
+            <div class="col">
+              <div class="card" style="height: 14rem !important;">
+                <div class="row">
+                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                    <div class="card-body">
+                      <h5 class="card-title" id="sinhala">{{__('awareness.hospital_title')}}</h5>
+                      <p class="card-text" id="sinhala">{{__('awareness.hospital_content1')}} {{__('awareness.hospital_content2')}}</p>
+                      <a href="#hospital" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
+                    </div>
+                  </div>
+                  <div class="col-md-3 "> <!-- Image column, order first on medium and larger, first on mobile -->
+                    <img src="assets/img/cards/hospital.png" class="img-fluid img-md4" alt="...">
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- Repeat the above div for each additional card -->
+            {{-- <div class="col">
+              <div class="card" style="height: 14rem !important;">
+                <div class="row">
+                  
+                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                    <div class="card-body">
+                      <h5 class="card-title" id="sinhala">{{__('awareness.prevent_title')}}</h5>
+                      <p class="card-text" id="sinhala">{{__('awareness.prevent_content1')}} {{__('awareness.prevent_content2')}}</p>
+                      <a href="#prevent" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
+                    </div>
+                  </div>
+                  <div class="col-md-3 "> <!-- Image column, order first on medium and larger, first on mobile -->
+                    <img src="assets/img/cards/recognize.png" class="img-fluid img-md2" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div> --}}
+
+            <!-- Repeat the above div for each additional card -->
+            <div class="col">
+              <div class="card" style="height: 14rem !important;">
+                <div class="row">
+                  <img src="assets/img/cards/prevent.png" class="card-img-top" alt="..." style="height: 14rem !important;padding-bottom: 1rem !important; padding-left:2rem;padding-right:2rem">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title" id="sinhala">{{__('awareness.prevent_title')}}</h5>
+                    <p class="card-text" id="sinhala">{{__('awareness.prevent_content1')}} {{__('awareness.prevent_content2')}}</p>
+                    <a href="#prevent" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select all elements with class 'card-text' and loop through them
+        var paragraphs = document.querySelectorAll('.card-text');
+        paragraphs.forEach(function(paragraph) {
+          // Get the text content of the current paragraph
+          var paragraphText = paragraph.textContent;
+          
+          // Split the text into an array of words
+          var words = paragraphText.split(' ');
+          
+          // Slice the array to keep only the first 20 words
+          var shortenedText = words.slice(0, 15).join(' ');
+          
+          // Update the current paragraph with the shortened text
+          paragraph.textContent = shortenedText + '...';
+        });
+      });
+    </script>
+{{-- 
+<section id="section-id" class="features" >
+  <P></P>
+  <P></P>
+  <h4>Thashini</h4>
+  <P >Raleesha</P>
+</section> --}}
+
+    {{-- <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="card">
+            <img src="assets/img/card.jpg" class="card-img-top" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Card with an image overlay</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-12 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <div class="col-lg-12">
+
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Card with an image on left</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <div class="col-lg-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Default Accordion</h5>
+      
+                    <!-- Default Accordion -->
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Accordion Item #1
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Accordion Item #2
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                    </div><!-- End Default Accordion Example -->
+      
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <div class="col-lg-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Default Accordion</h5>
+      
+                    <!-- Default Accordion -->
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Accordion Item #1
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Accordion Item #2
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                    </div><!-- End Default Accordion Example -->
+      
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          
+
+        </div>
+
+      </div>
+    </section> --}}
+    {{-- <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
 
@@ -70,38 +363,7 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
-
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Pills Tabs</h5>
-
-        <!-- Pills Tabs -->
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-          </li>
-        </ul>
-        <div class="tab-content pt-2" id="myTabContent">
-          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="home-tab">
-            Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.
-          </div>
-          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
-            Nesciunt totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.
-          </div>
-          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="contact-tab">
-            Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
-          </div>
-        </div><!-- End Pills Tabs -->
-
-      </div>
-    </div>
+    </section><!-- End About Section --> --}}
     <!-- ======= Clients Section ======= -->
     {{-- <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
@@ -138,51 +400,39 @@
     </section><!-- End Clients Section --> --}}
 
     <!-- ======= Features Section ======= -->
-    <section id="features" class="features" data-aos="fade-up">
+<div class="container">
+<section id="what" class="features" data-aos="fade-up">
       <div class="container">
-
         <div class="section-title">
-          <h2>Features</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          
+          <h2 id="sinhala">{{__('awareness.what_title')}}</h2> 
         </div>
-
         <div class="row content">
           <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
-            <img src="assets/img/features-1.png" class="img-fluid" alt="">
+            <img src="assets/img/cards/w1.png" class="img-fluid w1" alt="">
           </div>
           <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
             <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
+              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content1')}}</li>
+              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content2')}}</li>
+              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content3')}}</li>
             </ul>
           </div>
         </div>
 
         <div class="row content">
           <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-            <img src="assets/img/features-2.png" class="img-fluid" alt="">
+            <img src="assets/img/cards/w2.png" class="img-fluid w2" alt="">
           </div>
           <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
-            <h3>Corporis temporibus maiores provident</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
+            <ul>
+              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content4')}}</li>
+              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content5')}}</li>
+              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content6')}}</li>
+            </ul>
           </div>
         </div>
-
-        <div class="row content">
+        {{-- <div class="row content">
           <div class="col-md-5" data-aos="fade-right">
             <img src="assets/img/features-3.png" class="img-fluid" alt="">
           </div>
@@ -196,7 +446,6 @@
             </ul>
           </div>
         </div>
-
         <div class="row content">
           <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
             <img src="assets/img/features-4.png" class="img-fluid" alt="">
@@ -213,13 +462,285 @@
               culpa qui officia deserunt mollit anim id est laborum
             </p>
           </div>
-        </div>
-
+        </div> --}}
       </div>
-    </section><!-- End Features Section -->
+</section>
+
+<section id="recognize" class="features" data-aos="fade-up">
+  <div class="container" style="margin-top: 3rem">
+    <div class="section-title">
+      <h2 id="sinhala">{{__('awareness.recognize_title')}}</h2> 
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/cards/r1.png" class="img-fluid r1" alt="">
+      </div>
+      <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content3')}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/cards/r2.png" class="img-fluid r2" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content5')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content6')}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="assets/img/cards/s4.png" class="img-fluid r3" alt="">
+      </div>
+      <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content8')}}</li>
+        </ul>
+      </div>
+    </div>
+   {{-- <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/features-4.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+        <p class="fst-italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+        <p>
+          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+      </div>
+    </div> --}}
+  </div>
+</section>
+
+<section id="should" class="features" data-aos="fade-up">
+  <div class="container" style="margin-top: 3rem">
+    <div class="section-title">
+      <h2 id="sinhala">{{__('awareness.should_title')}}</h2> 
+    </div>
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/cards/s1.png" class="img-fluid s1" alt="">
+      </div>
+      <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content3')}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/cards/s2.png" class="img-fluid s2" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content5')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content6')}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="assets/img/cards/s3.png" class="img-fluid s3" alt="">
+      </div>
+      <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content9')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content10')}}</li>
+        </ul>
+      </div>
+    </div>
+    {{--<div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/features-4.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+        <p class="fst-italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+        <p>
+          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+      </div>
+    </div> --}}
+  </div>
+</section>
+
+<section id="hospital" class="features" data-aos="fade-up">
+  <div class="container" style="margin-top: 3rem">
+    <div class="section-title">
+      <h2 id="sinhala">{{__('awareness.hospital_title')}}</h2> 
+    </div>
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content3')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content4')}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <ul>
+          
+          <li id="sinhala"><strong>{{__('awareness.hospital_content5')}}</strong></li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content6')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content9')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content10')}}</li>
+        </ul>
+      </div>
+    </div>
+    {{--<div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/features-4.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+        <p class="fst-italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+        <p>
+          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+      </div>
+    </div> --}}
+  </div>
+</section>
+
+<section id="prevent" class="features" data-aos="fade-up">
+  <div class="container" style="margin-top: 3rem">
+    <div class="section-title">
+      <h2 id="sinhala">{{__('awareness.prevent_title')}}</h2> 
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/cards/p1.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content3')}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/cards/p2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content5')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content6')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content7')}}</li>
+
+        </ul>
+      </div>
+    </div>
+    
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="assets/img/cards/p3.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content9')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content10')}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content11')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content12')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content13')}}</li>
+
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="assets/img/features-3.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content14')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content15')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content16')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content17')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content18')}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+        <ul>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content19')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content20')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content21')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content22')}}</li>
+          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content23')}}</li>
+       </ul>
+      </div>
+    </div>
+ 
+
+  </div>
+</section>
+</div>
 
     <!-- ======= Steps Section ======= -->
-    <section id="steps" class="steps">
+    {{-- <section id="steps" class="steps">
       <div class="container">
 
         <div class="row no-gutters" data-aos="fade-up">
@@ -263,9 +784,9 @@
         </div>
 
       </div>
-    </section><!-- End Steps Section -->
+    </section><!-- End Steps Section --> --}}
 
-    <!-- ======= Services Section ======= -->
+    {{-- <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
@@ -311,159 +832,6 @@
 
       </div>
     </section><!-- End Services Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
@@ -840,7 +1208,7 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Contact Section --> --}}
 
   </main>
 
