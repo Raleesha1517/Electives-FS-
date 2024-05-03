@@ -45,7 +45,8 @@ Route::middleware(LocalizationMiddleware::class)
 
         Route::middleware(['auth',Doctor::class])->group(function () {
             Route::get('doctors/dashboard',[DoctorController::class,'index'])->name('doctors.dashboard');
-            Route::get('patient',[DoctorController::class,'index1'])->name('doctors.dashboard');
+            Route::get('doctors/patient',[DoctorController::class,'viewpatient']);
+            Route::post('doctors/patient',[DoctorController::class,'addpatient']);
         });
 
         Route::middleware(['auth',User::class])->group(function () {

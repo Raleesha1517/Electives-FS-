@@ -28,27 +28,34 @@ class AdminController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:6',
-            'phone_number' => 'required|string',
-            'designation' => 'required|string',
-            'ward' => 'required|string',
+            'date_of_birth' => 'required|date',
+            'age' => 'nullable|integer',
+            'gender' => 'required|string',
+            'address' => 'nullable|string',
+            'blood_group' => 'nullable|string',
+            'home_telephone' => 'nullable|string',
+            'mobile_number' => 'nullable|string',
+            'guardian_name' => 'nullable|string',
+            'guardian_relationship' => 'nullable|string',
+            'guardian_nic' => 'nullable|string',
+            'medications' => 'nullable|string',
+            'remarks' => 'nullable|string',
         ]);
-
-        // Create a new user record for the doctor
+    
+        // Create a new user record
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->usertype = $request->usertype; // Use bcrypt to hash the password
+        $user->usertype = $request->usertype; // Assuming 'usertype' is a field in the 'users' table
         $user->save();
-
-        // Create a new doctor record
-        $doctor = new Doctor();
-        $doctor->user_id = $user->id;
-        $doctor->phone_number = $request->phone_number;
-        $doctor->designation = $request->designation;
-        $doctor->ward = $request->ward;
-        $doctor->save();
-
-        return redirect('/admin/dashboard')->with('success', 'Doctor added successfully.');
+    
+        // Create a new patient record
+        $patient = new Patient();
+        $patient->fill($validatedData);
+        $patient->user_id = $user->id;
+        $patient->save();
+    
+        return redirect('/admin/dashboard')->with('success', 'Patient added successfully.');
     }
 }
