@@ -47,10 +47,14 @@ Route::middleware(LocalizationMiddleware::class)
             Route::get('doctors/dashboard',[DoctorController::class,'index'])->name('doctors.dashboard');
             Route::get('doctors/patient',[DoctorController::class,'viewpatient']);
             Route::post('doctors/patient',[DoctorController::class,'addpatient']);
+            Route::get('doctors/patients/{id}', [DoctorController::class, 'viewPatientDetails'])->name('doctors.viewPatientDetails');
+
         });
 
         Route::middleware(['auth',User::class])->group(function () {
             Route::get('users/dashboard',[UserController::class,'index'])->name('users.dashboard');
+            Route::get('users/records',[UserController::class,'createRecord']);
+            Route::post('users/records',[UserController::class,'postRecord']);
         });
 
     });

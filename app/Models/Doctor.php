@@ -12,4 +12,14 @@ class Doctor extends Model
     protected $table = 'doctors';
 
     protected $fillable = ['user_id','phone_number', 'designation', 'ward'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function patients()
+    {
+        return $this->hasMany(Patients::class);
+    }
 }

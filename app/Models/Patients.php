@@ -27,4 +27,19 @@ class Patients extends Model
         'guardian_nic',
         'remarks',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function seizureRecords()
+    {
+        return $this->hasMany(Seizure_records::class);
+    }
 }

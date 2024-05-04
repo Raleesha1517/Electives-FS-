@@ -125,7 +125,7 @@
                               <td>{{ $patient->name }}</td>
                               <td>{{ $patient->date_of_birth }}</td>
                               <td>{{ $patient->date_of_birth }}</td>
-                              <td><a href=""><span class="badge bg-success">See More</span></a></td>
+                              <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge bg-success">See More</span></a></td>
                               <!-- Add more table cells for other patient attributes -->
                           </tr>
                         @endforeach
