@@ -39,8 +39,13 @@ Route::middleware(LocalizationMiddleware::class)
 
         Route::middleware(['auth',Admin::class])->group(function () {
             Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
-            Route::get('admin/doctors',[AdminController::class,'doctorsAdd']);
+            Route::get('admin/doctors',[AdminController::class,'doctorsAdd'])->name('admin.doctors');
             Route::post('admin/doctors',[AdminController::class,'doctorsPost']);
+            Route::get('admin/admin',[AdminController::class,'adminAdd'])->name('admin.admin');
+            Route::post('admin/admin',[AdminController::class,'adminPost']);
+            Route::get('admin/patients/{id}', [AdminController::class, 'deletePatient'])->name('admin.patients.delete');
+            Route::get('admin/doctors/{id}', [AdminController::class, 'deleteDoctor'])->name('admin.doctors.delete');
+            Route::get('admin/admins/{id}', [AdminController::class, 'deleteAdmin'])->name('admin.admins.delete');
         });
 
         Route::middleware(['auth',Doctor::class])->group(function () {

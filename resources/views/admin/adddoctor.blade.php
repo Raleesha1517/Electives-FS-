@@ -11,7 +11,7 @@
     @endif
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Multi Columns Form</h5>
+          <h5 class="card-title">Add A Doctor</h5>
 
           <form method="POST" action="/admin/doctors" class="row g-3">
             @csrf
