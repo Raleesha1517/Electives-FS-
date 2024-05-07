@@ -21,6 +21,7 @@ class Seizure_records extends Model
         'episode_number',
         'description',
     ];
+
     public function patient()
     {
         return $this->belongsTo(Patients::class);

@@ -59,4 +59,21 @@ class UserController extends Controller
 
         return redirect()->route('users.dashboard')->with('success', 'Seizure record added successfully.');
     }
+
+    public function show($id)
+    {
+        // Fetch the seizure record by ID
+        $seizureRecord = Seizure_records::findOrFail($id);
+
+        // Pass the seizure record data to the view
+        return view('users.record', ['seizureRecord' => $seizureRecord]);
+    }
+
+    public function deleteRecord($id)
+    {
+        $seizureRecord = Seizure_records::findOrFail($id);
+        $seizureRecord->delete();
+        
+        return redirect('/users/dashboard')->with('delete', 'Record deleted successfully.');
+    }
 }

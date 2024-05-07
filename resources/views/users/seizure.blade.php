@@ -5,20 +5,25 @@
 
 <main id="main" class="main">
 
-    <div class="container">
+    <div class="container" >
         <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">{{ __('Add Seizure Record') }}</div>
+            <div class="col-md-12" >
+                <div class="card" style="
+                  background: linearr-gradient(to left, #91c7e3, #ffffff); 
+                  border: solid #8abede 2px; ">
+                  {{-- linear-gradient(to top, #91c7e3, #ffffff) --}}
+                    <div class="card-header" style="margin-bottom: 10px; background: #90c6e2; color: #012970; font-weight:bold" id="sinhala">
+                      {{ __('common.SeizureRecord') }}</div>
     
                     <div class="card-body">
                         <form method="POST" action="/users/records">
                             @csrf
                         
                             <div class="row mb-3">
-                                <label for="date" class="col-sm-2 col-form-label">{{ __('Date') }}</label>
+                                <label for="date" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Date') }}</label>
                                 <div class="col-sm-10">
-                                    <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autofocus>
+                                    <input id="date" style="
+                                    border: solid #8abede 2px; " type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autofocus>
                                     @error('date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -28,9 +33,10 @@
                             </div>
                         
                             <div class="row mb-3">
-                                <label for="time" class="col-sm-2 col-form-label">{{ __('Time') }}</label>
+                                <label for="time" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Time') }}</label>
                                 <div class="col-sm-10">
-                                    <input id="time" type="time" class="form-control @error('time') is-invalid @enderror" name="time" value="{{ old('time') }}" required>
+                                    <input id="time" style="
+                                    border: solid #8abede 2px; " type="time" class="form-control @error('time') is-invalid @enderror" name="time" value="{{ old('time') }}" required>
                                     @error('time')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -40,9 +46,10 @@
                             </div>
                         
                             <div class="row mb-3">
-                                <label for="temperature" class="col-sm-2 col-form-label">{{ __('Temperature') }}</label>
+                                <label for="temperature" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Temperature') }}</label>
                                 <div class="col-sm-10">
-                                    <input id="temperature" type="number" step="0.01" class="form-control @error('temperature') is-invalid @enderror" name="temperature" value="{{ old('temperature') }}">
+                                    <input id="temperature" style="
+                                    border: solid #8abede 2px; " type="number" step="0.01" class="form-control @error('temperature') is-invalid @enderror" name="temperature" value="{{ old('temperature') }}">
                                     @error('temperature')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -52,15 +59,17 @@
                             </div>
                         
                             <div class="row mb-3">
-                                <label for="fever" class="col-sm-2 col-form-label">{{ __('Fever') }}</label>
+                                <label for="fever" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Fever') }}</label>
                                 <div class="col-sm-10">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="fever_yes" name="fever" value="1">
-                                        <label class="form-check-label" for="fever_yes">{{ __('Yes') }}</label>
+                                        <input class="form-check-input" style="
+                                    border: solid #8abede 2px; " type="radio" id="fever_yes" name="fever" value="1">
+                                        <label class="form-check-label" for="fever_yes" id="sinhala">{{ __('common.Yes') }}</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="fever_no" name="fever" value="0">
-                                        <label class="form-check-label" for="fever_no">{{ __('No') }}</label>
+                                        <input class="form-check-input" style="
+                                    border: solid #8abede 2px; " type="radio" id="fever_no" name="fever" value="0">
+                                        <label class="form-check-label" for="fever_no" id="sinhala">{{ __('common.No') }}</label>
                                     </div>
                                     @error('fever')
                                         <span class="invalid-feedback" role="alert">
@@ -72,9 +81,10 @@
                             
                         
                             <div class="row mb-3">
-                                <label for="duration" class="col-sm-2 col-form-label">{{ __('Duration') }}</label>
+                                <label for="duration" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Duration') }}</label>
                                 <div class="col-sm-10">
-                                    <input id="duration" type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration') }}" required>
+                                    <input id="duration" style="
+                                    border: solid #8abede 2px; " type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration') }}" required>
                                     @error('duration')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,9 +94,10 @@
                             </div>
                         
                             <div class="row mb-3">
-                                <label for="episode_number" class="col-sm-2 col-form-label">{{ __('Episode Number') }}</label>
+                                <label for="episode_number" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Episode') }}</label>
                                 <div class="col-sm-10">
-                                    <input id="episode_number" type="number" class="form-control @error('episode_number') is-invalid @enderror" name="episode_number" value="{{ old('episode_number') }}" required>
+                                    <input id="episode_number" style="
+                                    border: solid #8abede 2px; " type="number" class="form-control @error('episode_number') is-invalid @enderror" name="episode_number" value="{{ old('episode_number') }}" required>
                                     @error('episode_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -96,9 +107,10 @@
                             </div>
                         
                             <div class="row mb-3">
-                                <label for="description" class="col-sm-2 col-form-label">{{ __('Description') }}</label>
+                                <label for="description" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Description') }}</label>
                                 <div class="col-sm-10">
-                                    <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" rows="3" required>{{ old('description') }}</textarea>
+                                    <textarea id="description" style="
+                                    border: solid #8abede 2px; " class="form-control @error('description') is-invalid @enderror" name="description" rows="3" required>{{ old('description') }}</textarea>
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -111,9 +123,13 @@
                         
                             <div class="row mb-3">
                                 <div class="col-sm-10 offset-sm-2">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Submit') }}
+                                    <button type="submit" class="btn btn-primary" 
+                                    style="background-color: #90c6e2; color:#ffffff; border: none" id="sinhala">
+                                        {{ __('common.Submit') }}
                                     </button>
+                                    <button type="reset" class="btn btn-secondary" id="sinhala"> {{ __('common.Reset') }}</button>
+                                    <a href="{{ route('users.dashboard') }}" class="btn btn-primary"
+                                    style="background-color: #90c6e2; color:#ffffff; border: none" id="sinhala">{{__('common.Back')}}</a>
                                 </div>
                             </div>
                         </form>

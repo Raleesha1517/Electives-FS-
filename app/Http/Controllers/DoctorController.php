@@ -14,15 +14,12 @@ class DoctorController extends Controller
     public function index()
     {
         $doctor = Auth::user()->doctor;
+        $patients = $doctor ? $doctor->patients : collect(); // Retrieve patients if doctor exists, otherwise empty collection
+        $patientsCount = $patients->count(); // Count of patients
 
-        // Retrieve only the patients associated with the current doctor
-        $patients = $doctor->patients;
-    
-        // You may not need to retrieve all users and doctors, as you're focusing on patients
-        // If you need them for some other purpose, you can still retrieve them
-    
-        return view('doctors.dashboard', compact('patients'));
+        return view('doctors.dashboard', compact('patients', 'patientsCount'));
     }
+
 
     public function viewpatient()
     {
@@ -36,8 +33,10 @@ class DoctorController extends Controller
         {
             $patient = Patients::findOrFail($id);
             $user = $patient->user;
-            return view('doctors.viewpatient', compact('patient', 'user'));
+            $seizureRecords = $patient->seizureRecords; // Retrieve seizure records for the patient
+            return view('doctors.viewpatient', compact('patient', 'user', 'seizureRecords'));
         }
+
 
     public function addpatient(Request $request)
     {
@@ -91,6 +90,22 @@ class DoctorController extends Controller
         $patient->save();
 
         return redirect('/doctors/dashboard')->with('success', 'Patient added successfully.');
+    }
+
+    public function deleteRecord($id)
+    {
+        $seizureRecord = Seizure_records::findOrFail($id);
+        $seizureRecord->delete();
+        
+        return redirect('/doctors/dashboard')->with('delete', 'Record deleted successfully.');
+    }
+
+    public function deletePatient($id)
+    {
+        $patients = Patients::findOrFail($id);
+        $patients->delete();
+        
+        return redirect('/doctors/dashboard')->with('delete', 'Record deleted successfully.');
     }
 
     // public function view()

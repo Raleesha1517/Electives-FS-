@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Seizure_records;
 
 class Patients extends Model
 {
@@ -40,6 +41,7 @@ class Patients extends Model
 
     public function seizureRecords()
     {
-        return $this->hasMany(Seizure_records::class);
+        return $this->hasMany(Seizure_records::class, 'patient_id', 'id');
     }
+
 }

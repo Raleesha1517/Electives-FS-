@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\User;
 use App\Models\Patients;
+
 // use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 

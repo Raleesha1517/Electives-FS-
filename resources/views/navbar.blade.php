@@ -6,47 +6,57 @@
       <a href="index.html" class="logo"><img src="assets/img/logo2.png" alt=""  ></a>
       <img>
 
+      {{-- Button group --}}
+      {{-- <div class="btn-group" role="group" aria-label="Language selection">
+        @foreach (config('localization.locales') as $locale)
+            @switch($locale)
+                @case('en')
+                    @php $displayName = 'English'; @endphp
+                    @break
+                @case('sn')
+                    @php $displayName = 'Sinhala'; @endphp
+                    @break
+                @case('tm')
+                    @php $displayName = 'Tamil'; @endphp
+                    @break
+                @default
+                    @php $displayName = ucfirst($locale); @endphp
+            @endswitch
+            <button type="button" class="btn btn-secondary" onclick="window.location='{{ route('localization', $locale) }}'">{{ $displayName }}</button>
+        @endforeach
+    </div> --}}
+    <div class="btn-group d-md-none">
+        @foreach (config('localization.locales') as $locale)
+            @switch($locale)
+                @case('en')
+                    @php $displayName = 'ENG'; @endphp
+                    @break
+                @case('sn')
+                    @php $displayName = 'සිං'; @endphp
+                    @break
+                @case('tm')
+                    @php $displayName = 'சிங்'; @endphp
+                    @break
+                @default
+                    @php $displayName = ucfirst($locale); @endphp
+            @endswitch
+            <button type="button" class="btn" onclick="window.location='{{ route('localization', $locale) }}'">
+              {{ $displayName }}</button>
+        @endforeach
+    </div> 
+      
+    
+
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="/awareness">Awareness</a></li>
-          <li><a class="nav-link scrollto" href="#services">About Us</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Contact Us</a></li>
-          <li class="dropdown"><a href="#"><span>Language</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              {{-- <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li> --}}
-              @foreach (config('localization.locales') as $locale)
-              @switch($locale)
-                  @case('en')
-                      @php $displayName = 'English'; @endphp
-                      @break
-                  @case('sn')
-                      @php $displayName = 'Sinhala'; @endphp
-                      @break
-                  @case('tm')
-                      @php $displayName = 'Tamil'; @endphp
-                      @break
-                  @default
-                      @php $displayName = ucfirst($locale); @endphp
-              @endswitch
 
-              <li><a href="{{ route('localization', $locale) }}">{{ $displayName }}</a></li>
-             @endforeach
-{{-- 
-              <li><a href="#">English</a></li>
-              <li><a href="#">Sinhala</a></li>
-              <li><a href="#">Tamil</a></li> --}}
-            </ul>
-          </li>
+            <li>
+                <a class="nav-link scrollto {{ Route::currentRouteName() == 'welcome' ? 'active' : '' }}" href="{{ route('welcome') }}">Home</a>
+            </li>
+            <li>
+                <a class="nav-link scrollto {{ Route::currentRouteName() == 'awareness.index' ? 'active' : '' }}" href="{{ route('awareness.index') }}">Awareness</a>
+            </li>
+
           @if (Route::has('login'))
                 
                     @auth
@@ -78,11 +88,32 @@
                     @endauth
                 
             @endif
-          {{-- <li><a class="getstarted scrollto" href="/login">LOG IN</a></li>
-          <li><a class="getstarted scrollto" href="/register">REGISTER</a></li> --}}
+            <li class="d-none d-md-block">
+                <div class="btn-group" style="margin-left: 30px">
+                    @foreach (config('localization.locales') as $locale)
+                        @switch($locale)
+                            @case('en')
+                                @php $displayName = 'ENG'; @endphp
+                                @break
+                            @case('sn')
+                                @php $displayName = 'සිං'; @endphp
+                                @break
+                            @case('tm')
+                                @php $displayName = 'சிங்'; @endphp
+                                @break
+                            @default
+                                @php $displayName = ucfirst($locale); @endphp
+                        @endswitch
+                        <button type="button" class="btn" onclick="window.location='{{ route('localization', $locale) }}'">
+                          {{ $displayName }}</button>
+                    @endforeach
+                </div> 
+            </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header>
+
+            {{-- <li><a class="getstarted scrollto" href="/login">LOG IN</a></li>
+          <li><a class="getstarted scrollto" href="/register">REGISTER</a></li> --}}

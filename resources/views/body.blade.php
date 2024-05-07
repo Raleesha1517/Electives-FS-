@@ -44,7 +44,6 @@
   <!-- ======= Header ======= -->
   @include('navbar')
  <!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   @yield('content')
   <!-- End #main -->

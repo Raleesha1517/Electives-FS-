@@ -46,10 +46,26 @@
 
 @section('users.content')
 
-<main id="main" class="main">
+<main id="main" class="main" 
+style="background-image: url('{{ asset('users/assets/img/41.jpg') }}'); 
+background-size: cover; ">
+@if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
+@if(session('delete'))
+<div class="alert alert-danger">
+  {{ session('delete') }}
+</div>
+@endif
+
 
     <div class="pagetitle">
-      <h1>Your Previous Seizures</h1>
+     
+      <h1 id="sinhala">{{__('common.PreviousSeizures')}}</h1>
+      
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -57,29 +73,47 @@
         <div class="col-lg-12">
               
           <div class="container">
-            <p>Total Records: {{ count($seizureRecords) }}</p>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                @foreach ($seizureRecords as $index => $record)
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">Record #{{ $index + 1 }}</div>
-                            <div class="card-body">
-                                <h5 class="card-title">Date: {{ $record->date }} | Episode Number: {{ $record->episode_number }}</h5>
-                                <p class="card-text">Temperature: {{ $record->temperature ?? 'N/A' }} F | Fever: {{ $record->fever == 1 ? 'Yes' : 'No' }}</p>
-                                <p class="card-text">Time: {{ $record->time }} | Duration: {{ $record->duration }}</p>
-                                <p class="card-text">Description: {{ $record->description }}</p>
-                                <!-- Add more details here -->
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+            <p id="sinhala"><strong>{{__('common.TotalRecords')}}: {{ count($seizureRecords) }}</strong></p>
+            <table class="table" style="border: 2px solid #012970;">
+                <thead>
+                    <tr>
+                        {{-- <th scope="col">#</th> --}}
+                        
+                        <th scope="col" id="sinhala">{{__('common.Episode')}}</th>
+                        <th scope="col" id="sinhala">{{__('common.Date')}}</th>
+                        <th scope="col" id="sinhala"></th>
+                        <th scope="col" id="sinhala"></th>
+                        <!-- Add more headers for additional details if needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($seizureRecords as $index => $record)
+                        <tr>
+                            {{-- <th scope="row">{{ $index + 1 }}</th> --}}
+                            <td>{{ $record->episode_number }}</td>
+                            <td>{{ $record->date }}</td>
+                            <td>
+                              <a href="{{ route('seizure.details', ['id' => $record->id]) }}">
+                                <span class="badge" style="background-color: #012970" id="sinhala">{{__('common.SeeMore')}}</span>
+                              </a>
+                            </td>
+                            <td>
+                            <a href="{{ route('record.delete', ['id' => $record->id]) }}" class="delete-link" 
+                              data-type="record" data-id="{{ $record->id }}" 
+                              onclick="return confirm('Are you sure you want to delete this Record?')">
+                              <span class="badge bg-danger" id="sinhala">{{__('common.Delete')}}</span>
+                            </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-        
-        
-        
-            
             <!-- End General Form Elements -->
+            <a href="{{ route('users.records') }}" id="sinhala"
+            >
+            <span class="badge custombtn" id="sinhala">{{__('common.SeizureRecord1')}}</span>
+            </a>
 
             </div>
           </div>
@@ -207,7 +241,7 @@
         </div> --}}
       </div>
     </section>
-
+<p style="margin-bottom: 200px"></p>
   </main>
 
   @endsection

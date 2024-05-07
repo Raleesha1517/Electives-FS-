@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  margin-top: 60px;
 }
 
 a {
@@ -402,7 +403,7 @@ h6 {
 }
 
 #hero .container {
-  padding-top: 70px;
+  padding-top: 20px;
 }
 
 #hero h1 {
@@ -467,6 +468,48 @@ h6 {
     height: auto;
   }
 }
+
+.btn-group {
+  display: flex;
+  /* border: #0d5a5b solid 2px; */
+}
+
+.btn-group .btn {
+  /* margin-bottom: 10px;  */
+  border: none; /* Remove default button border */
+  background-color: #d3f9f4; /* Set button background color */
+  font-weight: bolder;
+  color: #0d5a5b; /* Set button text color */
+  padding: 10px; /* Add padding to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Add transition effect for color change */
+}
+
+
+/* Add hover effect */
+.btn-group .btn:hover {
+  background-color: #0d5a5b; /* Change background color on hover */
+  color: #d3f9f4; /* Change text color on hover */
+}
+
+.custombtn{
+  /* margin-bottom: 10px;  */
+  border: none; /* Remove default button border */
+  background-color: #d3f9f4; /* Set button background color */
+  font-weight: bolder;
+  color: #0d5a5b; /* Set button text color */
+  padding: 10px; /* Add padding to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Add transition effect for color change */
+}
+
+
+/* Add hover effect */
+.custombtn:hover {
+  background-color: #0d5a5b; /* Change background color on hover */
+  color: #d3f9f4; /* Change text color on hover */
+}
+
 
 /*--------------------------------------------------------------
 # Sections General

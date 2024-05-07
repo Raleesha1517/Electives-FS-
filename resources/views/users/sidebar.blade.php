@@ -3,21 +3,23 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link {{ Route::currentRouteName() !== 'users.dashboard' ? 'collapsed' : '' }}"  href="{{ route('users.dashboard') }}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Awareness</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link {{ Route::currentRouteName() !== 'awareness.index' ? 'collapsed' : '' }}"  href="{{ route('awareness.index') }}">
+          <i class="bi bi-grid"></i>
+          <span>Awareness</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      
+
+      <li class="nav-item">
+        <a class="nav-link {{ Route::currentRouteName() !== 'users.records' ? 'collapsed' : '' }}" href="{{ route('users.records') }}">
           <i class="bi bi-grid"></i>
           <span>Add Records</span>
         </a>

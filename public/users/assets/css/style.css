@@ -15,7 +15,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  /* background: linear-gradient(to bottom, #e5f8fd, rgb(255, 255, 255)); */
   color: #444444;
 }
 
@@ -38,6 +38,10 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 
+#sinhala{
+  font-family: "Noto Sans Sinhala", sans-serif;
+}
+
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
@@ -52,6 +56,8 @@ h6 {
     padding: 20px;
   }
 }
+
+
 
 /*--------------------------------------------------------------
 # Page Title
@@ -254,6 +260,17 @@ h6 {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.borderless-table {
+  border-collapse: collapse;
+}
+
+.borderless-table td {
+  padding: 8px;
+  border: none;
+}
+
+
+
 /* Alerts */
 .alert-heading {
   font-weight: 500;
@@ -351,6 +368,46 @@ h6 {
   border-bottom: 2px solid #4154f1;
 }
 
+.btn-group {
+  display: flex;
+  /* border: #0d5a5b solid 2px; */
+}
+
+.btn-group .btn {
+  /* margin-bottom: 10px;  */
+  border: none; /* Remove default button border */
+  background-color: #d2e9ee; /* Set button background color */
+  font-weight: bolder;
+  color: #1a3e7e; /* Set button text color */
+  padding: 10px; /* Add padding to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Add transition effect for color change */
+}
+
+
+/* Add hover effect */
+.btn-group .btn:hover {
+  background-color: #1a3e7e; /* Change background color on hover */
+  color: #d2e9ee; /* Change text color on hover */
+}
+
+.custombtn{
+  border: none; /* Remove default button border */
+  background-color: #1a3e7e; /* Set button background color */
+  font-weight: bolder;
+  color: #d2e9ee; /* Set button text color */
+  padding: 10px; /* Add padding to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s;
+}
+
+.custombtn:hover {
+  background-color: #d2e9ee; /* Change background color on hover */
+  color: #1a3e7e; /* Change text color on hover */
+}
+
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -380,8 +437,8 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   height: 60px;
-  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  box-shadow: 0px 2px 20px #0129701a;
+  background: linear-gradient(to top, #b1ebf8, #4977b3);
   padding-left: 20px;
   /* Toggle Sidebar Button */
   /* Search Bar */
@@ -612,6 +669,10 @@ h6 {
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
 }
+/* .custombtn:hover {
+  background-color: #d2e9ee; 
+  color: #1a3e7e;
+} */
 
 @media (max-width: 1199px) {
   .sidebar {
@@ -622,7 +683,7 @@ h6 {
 .sidebar::-webkit-scrollbar {
   width: 5px;
   height: 8px;
-  background-color: #fff;
+  background-color: #d2e9ee;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
@@ -684,9 +745,9 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #d2e9ee;
   transition: 0.3;
-  background: #f6f9ff;
+  background: #012970;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -694,7 +755,7 @@ h6 {
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #4154f1;
+  color: #d2e9ee;
 }
 
 .sidebar-nav .nav-link.collapsed {
@@ -707,12 +768,12 @@ h6 {
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
+  color: #1a3e7e;
   background: #f6f9ff;
 }
 
 .sidebar-nav .nav-link:hover i {
-  color: #4154f1;
+  color: #1a3e7e;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -750,11 +811,11 @@ h6 {
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
-  color: #4154f1;
+  color: #1a3e7e;
 }
 
 .sidebar-nav .nav-content a.active i {
-  background-color: #4154f1;
+  background-color: #1a3e7e;
 }
 
 /*--------------------------------------------------------------

@@ -6,6 +6,26 @@
 
 <section id="hero" class="d-flex align-items-center">
 
+    {{-- <div class="btn-group" style="position: absolute; top: 90px; right: 20px;">
+        @foreach (config('localization.locales') as $locale)
+            @switch($locale)
+                @case('en')
+                    @php $displayName = 'ENG'; @endphp
+                    @break
+                @case('sn')
+                    @php $displayName = 'සිං'; @endphp
+                    @break
+                @case('tm')
+                    @php $displayName = 'சிங்'; @endphp
+                    @break
+                @default
+                    @php $displayName = ucfirst($locale); @endphp
+            @endswitch
+            <button type="button" class="btn" onclick="window.location='{{ route('localization', $locale) }}'">
+              {{ $displayName }}</button>
+        @endforeach
+    </div> --}}
+
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
       <h1 style="font-weight: 400;" id="sinhala">{{__('awareness.title')}}</h1>
       <img src="assets/img/mother.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
@@ -596,7 +616,7 @@
     </div>
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
-        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/12.png" class="img-fluid" alt="">
       </div>
       <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
         <ul>
@@ -610,7 +630,7 @@
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/8.png" class="img-fluid" alt="">
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
@@ -692,7 +712,7 @@
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/7.png" class="img-fluid" alt="" style="height: 500px">
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
@@ -707,7 +727,7 @@
 
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right">
-        <img src="assets/img/features-3.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/11.png" class="img-fluid" alt="">
       </div>
       <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
           <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content14')}}</li>
@@ -721,7 +741,7 @@
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/features-2.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/10.png" class="img-fluid" alt="" >
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>

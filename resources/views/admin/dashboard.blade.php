@@ -73,7 +73,7 @@
 
 
         <!-- Left side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="row">
 
             <!-- Sales Card -->
@@ -144,7 +144,8 @@
             
             <div class="col-12">
               <div class="card top-selling overflow-auto">
-                <a href="/admin/doctors" class="btn btn-success" style="margin: 10px 10px 10px 10px">Add New Doctor</a>
+                
+                <a href="/admin/doctors" class="btn custombtn" style="margin: 10px 10px 10px 10px">Add New Doctor</a>
                 
                 <div class="card-body pb-0">
                   <h5 class="card-title">Patients <span>| All</span></h5>
@@ -189,7 +190,7 @@
 
             <div class="col-12">
               <div class="card top-selling overflow-auto">
-                <a href="/admin/doctors" class="btn btn-success" style="margin: 10px 10px 10px 10px">Add New Doctor</a>
+                <a href="/admin/doctors" class="btn custombtn" style="margin: 10px 10px 10px 10px">Add New Doctor</a>
                   
                   <div class="card-body pb-0">
                       <h5 class="card-title">Doctors <span>| All</span></h5>
@@ -232,7 +233,7 @@
 
           <div class="col-12">
             <div class="card top-selling overflow-auto">
-                <a href="/admin/add-admin" class="btn btn-success" style="margin: 10px 10px 10px 10px">Add New Admin</a>
+                <a href="/admin/add-admin" class="btn custombtn" style="margin: 10px 10px 10px 10px">Add New Admin</a>
                 
                 <div class="card-body pb-0">
                     <h5 class="card-title">Admins <span>| All</span></h5>
@@ -275,7 +276,7 @@
           </div>
         </div><!-- End Left side columns -->
 
-        <!-- Right side columns -->
+        {{-- <!-- Right side columns -->
         <div class="col-lg-4">
 
           <!-- Website Traffic -->
@@ -345,7 +346,7 @@
           </div><!-- End Website Traffic -->
 
         
-        </div><!-- End Right side columns -->
+        </div><!-- End Right side columns --> --}}
 
       </div>
     </section>

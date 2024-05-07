@@ -77,7 +77,7 @@
     <section class="section dashboard">
       <div class="row"> 
         {{-- <div class="col-12"> --}}
-          <button type="button" class="btn btn-success" 
+          <button type="button" class="btn custombtn" 
           style=" margin: 10px 10px 10px 10px">
           Add New Patient</button>
         {{-- </div> --}}
@@ -106,16 +106,23 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($patients as $patient)
-                          <tr>
-                              <td>{{ $patient->id }}</td>
-                              <td>{{ $patient->name }}</td>
-                              <td>{{ $patient->date_of_birth }}</td>
-                              <td>{{ $patient->date_of_birth }}</td>
-                              <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge bg-success">See More</span></a></td>
-                              <!-- Add more table cells for other patient attributes -->
-                          </tr>
-                        @endforeach
+                        @if($patients->isEmpty())
+                      <tr>
+                          <td colspan="5">No patients found.</td>
+                      </tr>
+                      @else
+                      @foreach ($patients as $patient)
+                      <tr>
+                          <td>{{ $patient->id }}</td>
+                          <td>{{ $patient->name }}</td>
+                          <td>{{ $patient->date_of_birth }}</td>
+                          <td>{{ $patient->date_of_birth }}</td>
+                          <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge custombtn">See More</span></a></td>
+                          <!-- Add more table cells for other patient attributes -->
+                      </tr>
+                      @endforeach
+                      @endif
+
                       </tbody>
                     </table>
                   </div>
@@ -128,40 +135,24 @@
         <!-- Right side columns -->
         <div class="col-lg-4">
 
-          <!-- Recent Activity -->
-          <div class="card info-card customers-card">
+            <div class="card info-card sales-card">
+              <div class="card-body">
+                <h5 class="card-title">Total patients <span></span></h5>
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-people" style="color: black"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{ $patientsCount }}</h6>
+                    {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
 
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body">
-              <h5 class="card-title">Customers <span>| This Year</span></h5>
-
-              <div class="d-flex align-items-center">
-                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                  <i class="bi bi-people"></i>
-                </div>
-                <div class="ps-3">
-                  <h6>1244</h6>
-                  <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
+                  </div>
                 </div>
               </div>
 
             </div>
-          </div><!-- End Recent Activity -->
 
-          <!-- Website Traffic -->
+          {{-- <!-- Website Traffic -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -291,9 +282,8 @@
               </div><!-- End sidebar recent posts-->
 
             </div>
-          </div><!-- End News & Updates -->
+          </div><!-- End News & Updates --> --}}
 
-        </div><!-- End Right side columns -->
 
       </div>
     </section>

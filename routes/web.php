@@ -5,6 +5,7 @@ use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AwarenessController;
 use App\Http\Middleware\LocalizationMiddleware;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Doctor;
@@ -21,13 +22,11 @@ Route::get('/localization/{locale}',LocaleController::class)->name('localization
 Route::middleware(LocalizationMiddleware::class)
     ->group(function ()
     {
-        Route::get('/awareness', function () {
-            return view('awareness');
-        });
+        Route::get('/awareness', [AwarenessController::class, 'index'])->name('awareness.index');
 
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->middleware(['auth', 'verified'])->name('dashboard');
+        // Route::get('/dashboard', function () {
+        //     return view('dashboard');
+        // })->middleware(['auth', 'verified'])->name('dashboard');
         
         Route::middleware('auth')->group(function () {
             Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -52,14 +51,18 @@ Route::middleware(LocalizationMiddleware::class)
             Route::get('doctors/dashboard',[DoctorController::class,'index'])->name('doctors.dashboard');
             Route::get('doctors/patient',[DoctorController::class,'viewpatient']);
             Route::post('doctors/patient',[DoctorController::class,'addpatient']);
+            Route::get('doctors/patient/{id}', [DoctorController::class, 'deletePatient'])->name('patient.delete');
             Route::get('doctors/patients/{id}', [DoctorController::class, 'viewPatientDetails'])->name('doctors.viewPatientDetails');
+            Route::get('doctors/viewpatients/{id}', [DoctorController::class, 'deleteRecord'])->name('doctor.delete');
 
         });
 
         Route::middleware(['auth',User::class])->group(function () {
             Route::get('users/dashboard',[UserController::class,'index'])->name('users.dashboard');
-            Route::get('users/records',[UserController::class,'createRecord']);
+            Route::get('users/records',[UserController::class,'createRecord'])->name('users.records');
             Route::post('users/records',[UserController::class,'postRecord']);
+            Route::get('users/seizure/{id}', [UserController::class,'show'])->name('seizure.details');
+            Route::get('users/dashboard/{id}', [UserController::class, 'deleteRecord'])->name('record.delete');
         });
 
     });

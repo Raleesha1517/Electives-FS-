@@ -261,6 +261,25 @@ h6 {
   font-size: 20px;
 }
 
+.custombtn{
+  /* margin-bottom: 10px;  */
+  border: none; /* Remove default button border */
+  background-color: #d3f9f4; /* Set button background color */
+  font-weight: bolder;
+  color: #0d5a5b; /* Set button text color */
+  padding: 10px; /* Add padding to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Add transition effect for color change */
+}
+
+
+/* Add hover effect */
+.custombtn:hover {
+  background-color: #0d5a5b; /* Change background color on hover */
+  color: #d3f9f4; /* Change text color on hover */
+}
+ 
+
 /* Close Button */
 .btn-close {
   background-size: 25%;
