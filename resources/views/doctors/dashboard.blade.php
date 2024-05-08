@@ -114,7 +114,7 @@
                           <th scope="col">Name</th>
                           <th scope="col">Age</th>
                           <th scope="col">Gender</th>
-                          <th scope="col">See More..</th>
+                          <th scope="col">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -129,12 +129,17 @@
                           <td>{{ $patient->name }}</td>
                           <td>{{ $patient->date_of_birth }}</td>
                           <td>{{ $patient->gender }}</td>
-                          <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge custombtn">See More</span></a></td>
-                          <!-- Add more table cells for other patient attributes -->
+                          <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge custombtn">See More</span></a>
+                            <a href="{{ route('patient.delete', ['id' => $patient->id]) }}" class="delete-link" data-type="patient" data-id="{{ $patient->id }}" 
+                              onclick="return confirm('Are you sure you want to delete this Patient?')">
+                              <span class="badge custombtn">delete</span>
+                          </a>
+                          </td>
+                          
                       </tr>
                       @endforeach
                       @endif
-
+                      
                       </tbody>
                     </table>
                   </div>

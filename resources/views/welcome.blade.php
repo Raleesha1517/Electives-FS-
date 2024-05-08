@@ -5,7 +5,7 @@
 <section id="hero" class="d-flex align-items-center">
   
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-      <h1 style="font-weight: 500">Febrile Seizure</h1>
+      <h1 style="font-weight: 500">Febrile Seizures</h1>
       <h1 tyle="font-weight: 500">උණ වලිප්පුව</h1>
       <h1 tyle="font-weight: 100">காய்ச்சல் வலிப்பு</h1>
       <h2>Select Your Language | ඔබේ භාෂාව තෝරන්න | உங்கள் மொழியைத் தேர்ந்தெடுக்கவும் </h2>

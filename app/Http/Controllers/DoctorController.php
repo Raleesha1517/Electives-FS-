@@ -116,7 +116,7 @@ catch (\Exception $e) {
         $patients = Patients::findOrFail($id);
         $patients->delete();
         
-        return redirect('/doctors/dashboard')->with('delete', 'Record deleted successfully.');
+        return redirect('/doctors/dashboard')->with('delete', 'patient deleted successfully.');
     }
 
     // public function view()
