@@ -33,9 +33,9 @@
                                 <tr>
                                     <td><strong>Age:</strong></td>
                                     <td>
-                                        {{ calculateAge($patient->date_of_birth)['years'] }} years,
+                                        {{-- {{ calculateAge($patient->date_of_birth)['years'] }} years,
                                         {{ calculateAge($patient->date_of_birth)['months'] }} months,
-                                        {{ calculateAge($patient->date_of_birth)['days'] }} days
+                                        {{ calculateAge($patient->date_of_birth)['days'] }} days --}}
                                     </td>
                                 </tr>
                                 <tr>
@@ -101,45 +101,112 @@
                                 </tr>
                             </tbody>
                         </table>
-                        @if ($seizureRecords->isNotEmpty())
-                        <h2>Seizure Records</h2>
-                        <ul>
-                            @foreach ($seizureRecords as $record)
-                                <li>Date: {{ $record->date }}, Time: {{ $record->time }}, Duration: {{ $record->duration }}</li>
-                                <li><a href="{{ route('record.delete', ['id' => $record->id]) }}" class="delete-link" 
-                                    data-type="record" data-id="{{ $record->id }}" 
-                                    onclick="return confirm('Are you sure you want to delete this Record?')">
-                                    <span class="badge bg-danger" id="sinhala">{{__('common.Delete')}}</span>
-                                  </a></li>
-                                <!-- Add more seizure record details here -->
-                            @endforeach
-                        </ul>
-                    @else
-                        <p>No seizure records found for this patient.</p>
-                    @endif
+                        
                     </div>
                 </div>
             </div>
         </div>
+        @php
+        $totalRecords = $seizureRecords->count();
+         @endphp
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #117879; display: flex; justify-content: space-between;">
+                <p class="card-text" style="font-size: larger; margin: 0;"><strong>Seizure Records | Total records : {{ $totalRecords }}</strong></p>
+            </div>
+            <div class="card-body">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    @foreach ($seizureRecords as $record)
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading{{ $record->id }}" style="background-color: #ffffff; color: white;">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                data-bs-target="#flush-collapse{{ $record->id }}" aria-expanded="false" 
+                                aria-controls="flush-collapse{{ $record->id }}">
+                                    <strong>{{ $record->episode_number }} Episode | Date: {{ $record->date }}</strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse{{ $record->id }}" class="accordion-collapse collapse" 
+                                aria-labelledby="flush-heading{{ $record->id }}" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Time</th>
+                                                <td>{{ $record->time }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Temperature (Fahrenheit)</th>
+                                                <td>{{ $record->temperature }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Fever</th>
+                                                <td>{{ $record->fever }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Duration (Seconds)</th>
+                                                <td>{{ $record->duration }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Description</th>
+                                                <td>{{ $record->description }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Delete Record</th>
+                                                <td><a href="{{ route('doctor.delete', ['id' => $record->id]) }}" class="delete-link" data-type="record" data-id="{{ $record->id }}" onclick="return confirm('Are you sure you want to delete this Record?')">
+                                                    <span class="badge bg-danger">{{__('common.Delete')}}</span>
+                                                  </a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        @if (!$loop->last)
+                            <hr style="border-top: 1px solid #ccc;">
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        
+        
+        <a href="/doctors/records/{{ $patient->id }}" id="sinhala">
+            <span class="badge custombtn">{{__('common.SeizureRecord1')}}</span>
+        </a>
+        
+        
+        
+       
     </div>
     
 </main>
+
 <?php
-// In your PHP file, define the calculateAge function
-function calculateAge($dob) {
-    // Create DateTime object for the date of birth
-    $birthDate = new DateTime($dob);
-    // Create DateTime object for today's date
-    $today = new DateTime();
-    // Calculate the difference between the two dates
-    $age = $today->diff($birthDate);
-    // Return the calculated age as an array
-    return [
-        'years' => $age->y,
-        'months' => $age->m,
-        'days' => $age->d
-    ];
-}
+// function calculateAge($dob) {
+//     $birthDate = new DateTime($dob);
+//     $today = new DateTime();
+//     $age = $today->diff($birthDate);
+//     return [
+//         'years' => $age->y,
+//         'months' => $age->m,
+//         'days' => $age->d
+//     ];
+// }
 ?>
 
 @endsection 
+
+{{-- @if ($seizureRecords->isNotEmpty())
+<h2>Seizure Records</h2>
+<ul>
+    @foreach ($seizureRecords as $record)
+        <li>Date: {{ $record->date }}, Time: {{ $record->time }}, Duration: {{ $record->duration }}</li>
+        <li><a href="{{ route('doctor.delete', ['id' => $record->id]) }}" class="delete-link" 
+            data-type="record" data-id="{{ $record->id }}" 
+            onclick="return confirm('Are you sure you want to delete this Record?')">
+            <span class="badge bg-danger" id="sinhala">{{__('common.Delete')}}</span>
+          </a></li>
+    @endforeach
+</ul>
+@else
+<p>No seizure records found for this patient.</p>
+@endif --}}

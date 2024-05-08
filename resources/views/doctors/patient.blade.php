@@ -5,10 +5,10 @@
 
 <main id="main" class="main">
 
-    <form method="POST" action="/admin/doctors">
+    <form method="POST" action="{{ route('doctors.patient') }}">
         @csrf
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
+            <label for="username" class="form-label">Guardian Name</label>
             <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
         </div>
     
@@ -22,10 +22,10 @@
             <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
         </div>
     
-        <input type="hidden" name="usertype" value="1" class="form-control">
+        <input type="hidden" name="user_type" value="1" class="form-control">
         
         <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Child Name</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
         </div>
     

@@ -74,12 +74,24 @@
       </nav>
     </div><!-- End Page Title -->
 
+    @if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
+@if(session('delete'))
+<div class="alert alert-danger">
+  {{ session('delete') }}
+</div>
+@endif
+
     <section class="section dashboard">
       <div class="row"> 
         {{-- <div class="col-12"> --}}
-          <button type="button" class="btn custombtn" 
+          <a type="button" class="btn custombtn" href="{{ route('doctors.patient') }}"
           style=" margin: 10px 10px 10px 10px">
-          Add New Patient</button>
+          Add New Patient</a>
         {{-- </div> --}}
       </div>
       <div class="row">
@@ -116,7 +128,7 @@
                           <td>{{ $patient->id }}</td>
                           <td>{{ $patient->name }}</td>
                           <td>{{ $patient->date_of_birth }}</td>
-                          <td>{{ $patient->date_of_birth }}</td>
+                          <td>{{ $patient->gender }}</td>
                           <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge custombtn">See More</span></a></td>
                           <!-- Add more table cells for other patient attributes -->
                       </tr>

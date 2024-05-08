@@ -49,11 +49,13 @@ Route::middleware(LocalizationMiddleware::class)
 
         Route::middleware(['auth',Doctor::class])->group(function () {
             Route::get('doctors/dashboard',[DoctorController::class,'index'])->name('doctors.dashboard');
-            Route::get('doctors/patient',[DoctorController::class,'viewpatient']);
+            Route::get('doctors/patient',[DoctorController::class,'viewpatient'])->name('doctors.patient');
             Route::post('doctors/patient',[DoctorController::class,'addpatient']);
             Route::get('doctors/patient/{id}', [DoctorController::class, 'deletePatient'])->name('patient.delete');
             Route::get('doctors/patients/{id}', [DoctorController::class, 'viewPatientDetails'])->name('doctors.viewPatientDetails');
             Route::get('doctors/viewpatients/{id}', [DoctorController::class, 'deleteRecord'])->name('doctor.delete');
+            Route::get('doctors/records/{patientId}',[DoctorController::class,'createRecord'])->name('doctor.records');
+            Route::post('doctors/records',[DoctorController::class,'postRecord']);
 
         });
 

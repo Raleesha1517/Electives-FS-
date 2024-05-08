@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Patients;
 use App\Models\User;
 use App\Models\Doctor;
+use App\Models\Seizure_records;
 // use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,11 +41,12 @@ class DoctorController extends Controller
 
     public function addpatient(Request $request)
     {
-        dd($request->all());
+        try {
         
         $validatedData = $request->validate([
-            'user_name' => 'required|string',
-            'user_email' => 'required|email|unique:users,email',
+            'username' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6',
             'user_type' => 'required|string',
             'name' => 'required|string',
             'date_of_birth' => 'required|date',
@@ -65,13 +67,15 @@ class DoctorController extends Controller
 
         // Create a new user record
         $user = new User();
-        $user->name = $request->user_name;
-        $user->email = $request->user_email;
+        $user->name = $request->username; // Change to 'username'
+        $user->email = $request->email; // Change to 'email'
         $user->usertype = $request->user_type;
+        $user->password = bcrypt($request->password);
         $user->save();
+        \DB::statement('UPDATE users SET phn = 1045300 + (id - 1) * 13 WHERE id = ?', [$user->id]);
 
         // Create a new patient record
-        $patient = new Patient();
+        $patient = new Patients();
         $patient->doctor_id = $doctor->id;
         $patient->user_id = $user->id;
         $patient->name = $request->name;
@@ -90,6 +94,13 @@ class DoctorController extends Controller
         $patient->save();
 
         return redirect('/doctors/dashboard')->with('success', 'Patient added successfully.');
+    }
+catch (\Exception $e) {
+    // Log or display the error
+    dd($e->getMessage());
+    // Optionally, redirect back with an error message
+    return redirect()->back()->with('error', 'Failed to add patient: ' . $e->getMessage());
+}
     }
 
     public function deleteRecord($id)
@@ -112,5 +123,41 @@ class DoctorController extends Controller
     // {
     //     return view('doctors.viewpatient');
     // }
+
+    public function createRecord($patientId)
+    {
+        $patient = Patients::findOrFail($patientId);
+        return view('doctors.seizure', compact('patient'));
+    }
+
+public function postRecord(Request $request)
+{
+    try {
+    // Validate the incoming request data
+    $validatedData = $request->validate([
+        'date' => 'required|date',
+        'time' => 'required',
+        'temperature' => 'nullable|numeric',
+        'fever' => 'nullable|string',
+        'duration' => 'required|string',
+        'episode_number' => 'required|integer',
+        'description' => 'required|string',
+        'patient_id' => 'required|exists:patients,id', // Ensure patient_id exists in patients table
+    ]);
+
+    // Create a new seizure record with the validated data
+    Seizure_records::create($validatedData);
+
+    // Redirect back to the patient details page with a success message
+    return redirect()->route('doctors.viewPatientDetails', ['id' => $validatedData['patient_id']])
+                     ->with('success', 'Seizure record added successfully.');
+}
+catch (\Exception $e) {
+    // Log or display the error
+    dd($e->getMessage());
+    // Optionally, redirect back with an error message
+    return redirect()->back()->with('error', 'Failed to add patient: ' . $e->getMessage());
+}
     
+}
 }
