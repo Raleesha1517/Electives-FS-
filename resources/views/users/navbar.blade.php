@@ -19,7 +19,7 @@
           </a>
         </li><!-- End Search Icon--> --}}
 
-        <li><a href="{{ url('/awareness') }}" class="nav-link nav-profile d-flex align-items-center pe-0">HOME</a></li>
+        {{-- <li><a href="{{ url('/awareness') }}" class="nav-link nav-profile d-flex align-items-center pe-0">HOME</a></li> --}}
 
         <li class="nav-item dropdown pe-3">
 

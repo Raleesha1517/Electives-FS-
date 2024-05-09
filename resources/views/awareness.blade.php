@@ -26,7 +26,44 @@
         @endforeach
     </div> --}}
 
+    
+
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <!-- Button trigger modal -->
+      <div style="margin-bottom: 20px; margin-top: 0px">
+        <button type="button" class="btn btn-inst" data-toggle="modal" data-target="#instructionsModal">
+          {{__('awareness.instructions')}}
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
+                    {{-- <button type="btn" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> --}}
+                </div>
+                <div class="modal-body">
+                    <!-- Your instructions content goes here -->
+                    <img src="assets/img/mother.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+                    <p>Instructions content goes here...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
       <h1 style="font-weight: 400;" id="sinhala">{{__('awareness.title')}}</h1>
       <img src="assets/img/mother.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
     </div>
@@ -42,14 +79,14 @@
             <div class="col">
               <div class="card" style="height: 14rem !important; ">
                 <div class="row">
-                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                  <div class="col-md-8"> <!-- Text column, order last on medium and larger, last on mobile -->
                     <div class="card-body">
                       <h5 class="card-title" id="sinhala">{{__('awareness.what_title')}}</h5>
                       <p class="card-text" id="sinhala">{{__('awareness.what_content1')}} {{__('awareness.what_content2')}}</p>
                       <a href="#what" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
                     </div>
                   </div>
-                  <div class="col-md-3 "> <!-- Image column, order first on medium and larger, first on mobile -->
+                  <div class="col-md-4"> <!-- Image column, order first on medium and larger, first on mobile -->
                     <img src="assets/img/cards/question.png" class="img-fluid img-md1" alt="...">
                   </div>
                 </div>
@@ -77,14 +114,14 @@
               <div class="card" style="height: 14rem !important;">
                 <div class="row">
                   
-                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                  <div class="col-md-8"> <!-- Text column, order last on medium and larger, last on mobile -->
                     <div class="card-body">
                       <h5 class="card-title" id="sinhala">{{__('awareness.should_title')}}</h5>
                       <p class="card-text" id="sinhala">{{__('awareness.should_content1')}} {{__('awareness.should_content2')}}</p>
                       <a href="#should" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
                     </div>
                   </div>
-                  <div class="col-md-3"> <!-- Image column, order first on medium and larger, first on mobile -->
+                  <div class="col-md-4"> <!-- Image column, order first on medium and larger, first on mobile -->
                     <img src="assets/img/cards/should.png" class="img-fluid img-md3" alt="...">
                   </div>
                 </div>
@@ -94,39 +131,20 @@
             <div class="col">
               <div class="card" style="height: 14rem !important;">
                 <div class="row">
-                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
+                  <div class="col-md-8"> <!-- Text column, order last on medium and larger, last on mobile -->
                     <div class="card-body">
                       <h5 class="card-title" id="sinhala">{{__('awareness.hospital_title')}}</h5>
                       <p class="card-text" id="sinhala">{{__('awareness.hospital_content1')}} {{__('awareness.hospital_content2')}}</p>
                       <a href="#hospital" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
                     </div>
                   </div>
-                  <div class="col-md-3 "> <!-- Image column, order first on medium and larger, first on mobile -->
+                  <div class="col-md-4"> <!-- Image column, order first on medium and larger, first on mobile -->
                     <img src="assets/img/cards/hospital.png" class="img-fluid img-md4" alt="...">
                   </div>
                   
                 </div>
               </div>
-            </div>
-            <!-- Repeat the above div for each additional card -->
-            {{-- <div class="col">
-              <div class="card" style="height: 14rem !important;">
-                <div class="row">
-                  
-                  <div class="col-md-9"> <!-- Text column, order last on medium and larger, last on mobile -->
-                    <div class="card-body">
-                      <h5 class="card-title" id="sinhala">{{__('awareness.prevent_title')}}</h5>
-                      <p class="card-text" id="sinhala">{{__('awareness.prevent_content1')}} {{__('awareness.prevent_content2')}}</p>
-                      <a href="#prevent" class="btn btn-success" id="sinhala">{{__('awareness.button')}}</a>
-                    </div>
-                  </div>
-                  <div class="col-md-3 "> <!-- Image column, order first on medium and larger, first on mobile -->
-                    <img src="assets/img/cards/recognize.png" class="img-fluid img-md2" alt="...">
-                  </div>
-                </div>
-              </div>
-            </div> --}}
-
+            </div>  
             <!-- Repeat the above div for each additional card -->
             <div class="col">
               <div class="card" style="height: 14rem !important;">
@@ -164,262 +182,7 @@
         });
       });
     </script>
-{{-- 
-<section id="section-id" class="features" >
-  <P></P>
-  <P></P>
-  <h4>Thashini</h4>
-  <P >Raleesha</P>
-</section> --}}
 
-    {{-- <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="card">
-            <img src="assets/img/card.jpg" class="card-img-top" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">Card with an image overlay</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-12 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <div class="col-lg-12">
-
-                <div class="card mb-3">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card with an image on left</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-12 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <div class="col-lg-12">
-
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Default Accordion</h5>
-      
-                    <!-- Default Accordion -->
-                    <div class="accordion" id="accordionExample">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
-                          </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
-                          </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
-                          </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                          </div>
-                        </div>
-                      </div>
-                    </div><!-- End Default Accordion Example -->
-      
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-12 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <div class="col-lg-12">
-
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Default Accordion</h5>
-      
-                    <!-- Default Accordion -->
-                    <div class="accordion" id="accordionExample">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
-                          </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
-                          </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
-                          </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                          </div>
-                        </div>
-                      </div>
-                    </div><!-- End Default Accordion Example -->
-      
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-          </div>
-
-          
-
-        </div>
-
-      </div>
-    </section> --}}
-    {{-- <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row no-gutters">
-          <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
-            <div class="content">
-              <h3>Febrile Seizure</h3>
-              <h3>උණ වලිප්පුව</h3>
-              <h3>Febrile Seizure</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-              <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
-            </div>
-          </div>
-          <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bx bx-images"></i>
-                  <h4>Labore consequatur</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                  <i class="bx bx-shield"></i>
-                  <h4>Beatae veritatis</h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                </div>
-              </div>
-            </div><!-- End .content-->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section --> --}}
-    <!-- ======= Clients Section ======= -->
-    {{-- <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="row">
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Clients Section --> --}}
-
-    <!-- ======= Features Section ======= -->
 <div class="container">
 <section id="what" class="features" data-aos="fade-up">
       <div class="container">
@@ -433,9 +196,9 @@
           </div>
           <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
             <ul>
-              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content1')}}</li>
-              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content2')}}</li>
-              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content3')}}</li>
+              <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.what_content1')}}</li>
+              <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.what_content2')}}</li>
+              <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.what_content3')}}</li>
             </ul>
           </div>
         </div>
@@ -446,9 +209,9 @@
           </div>
           <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
             <ul>
-              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content4')}}</li>
-              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content5')}}</li>
-              <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.what_content6')}}</li>
+              <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.what_content4')}}</li>
+              <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.what_content5')}}</li>
+              <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.what_content6')}}</li>
             </ul>
           </div>
         </div>
@@ -498,9 +261,9 @@
       </div>
       <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content1')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content2')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content3')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content3')}}</li>
         </ul>
       </div>
     </div>
@@ -511,9 +274,9 @@
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content4')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content5')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content6')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content5')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content6')}}</li>
         </ul>
       </div>
     </div>
@@ -522,8 +285,8 @@
         <img src="assets/img/cards/s4.png" class="img-fluid r3" alt="">
       </div>
       <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content7')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.recognize_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.recognize_content8')}}</li>
         </ul>
       </div>
     </div>
@@ -558,9 +321,9 @@
       </div>
       <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content1')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content2')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content3')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content3')}}</li>
         </ul>
       </div>
     </div>
@@ -571,9 +334,9 @@
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content4')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content5')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content6')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content5')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content6')}}</li>
         </ul>
       </div>
     </div>
@@ -582,30 +345,13 @@
         <img src="assets/img/cards/s3.png" class="img-fluid s3" alt="">
       </div>
       <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content7')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content8')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content9')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.should_content10')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content9')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.should_content10')}}</li>
         </ul>
       </div>
-    </div>
-    {{--<div class="row content">
-      <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/features-4.png" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
-        <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-        <p class="fst-italic">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
-        </p>
-        <p>
-          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum
-        </p>
-      </div>
-    </div> --}}
+    </div> 
   </div>
 </section>
 
@@ -616,31 +362,31 @@
     </div>
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
-        <img src="assets/img/cards1/12.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/12.png" class="img-fluid h1" alt="">
       </div>
       <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content1')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content2')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content3')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content3')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content4')}}</li>
         </ul>
       </div>
     </div>
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/cards1/8.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/8.png" class="img-fluid h2" alt="">
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
           
           <li id="sinhala"><strong>{{__('awareness.hospital_content5')}}</strong></li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content6')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content7')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content8')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content9')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.hospital_content10')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content6')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content9')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.hospital_content10')}}</li>
         </ul>
       </div>
     </div>
@@ -672,27 +418,27 @@
 
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
-        <img src="assets/img/cards/p1.png" class="img-fluid" alt="">
+        <img src="assets/img/cards/p1.png" class="img-fluid p1" alt="">
       </div>
       <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content1')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content2')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content3')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content1')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content2')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content3')}}</li>
         </ul>
       </div>
     </div>
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/cards/p2.png" class="img-fluid" alt="">
+        <img src="assets/img/cards/p2.png" class="img-fluid p2" alt="">
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content4')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content5')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content6')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content7')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content4')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content5')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content6')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content7')}}</li>
 
         </ul>
       </div>
@@ -700,25 +446,25 @@
     
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right">
-        <img src="assets/img/cards/p3.png" class="img-fluid" alt="">
+        <img src="assets/img/cards/p3.png" class="img-fluid p3" alt="">
       </div>
       <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content8')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content9')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content10')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content8')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content9')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content10')}}</li>
         </ul>
       </div>
     </div>
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/cards1/7.png" class="img-fluid" alt="" style="height: 500px">
+        <img src="assets/img/cards1/7.png" class="img-fluid p4" alt="" style="height: 500px">
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content11')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content12')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content13')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content11')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content12')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content13')}}</li>
 
 
         </ul>
@@ -727,29 +473,29 @@
 
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right">
-        <img src="assets/img/cards1/11.png" class="img-fluid" alt="">
+        <img src="assets/img/cards1/11.png" class="img-fluid p5" alt="">
       </div>
       <div class="col-md-7 pt-5" data-aos="fade-left"><ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content14')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content15')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content16')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content17')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content18')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content14')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content15')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content16')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content17')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content18')}}</li>
         </ul>
       </div>
     </div>
 
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-        <img src="assets/img/cards1/10.png" class="img-fluid" alt="" >
+        <img src="assets/img/cards1/10.png" class="img-fluid p6" alt="" >
       </div>
       <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
         <ul>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content19')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content20')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content21')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content22')}}</li>
-          <li id="sinhala"><i class="bi bi-check"></i> {{__('awareness.prevent_content23')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content19')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content20')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content21')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content22')}}</li>
+          <li id="sinhala"><i class="bi bi-check" style="color: #0d5a5b"></i> {{__('awareness.prevent_content23')}}</li>
        </ul>
       </div>
     </div>

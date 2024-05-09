@@ -1,8 +1,20 @@
 <?php
 
 return [
-    'title' => 'Febrile seizure is a curable disease',
+    'title' => 'Febrile seizures can be scary. Being prepared helps us stay Calm & Strong.',
     'button' => 'Read More',
+    //instructions
+    'instructions' => 'Instructions to use the Application >>',
+
+    'instructions1' => '',
+    'instructions2' => '',
+    'instructions3' => '',
+    'instructions4' => '',
+    'instructions5' => '',
+    'instructions6' => '',
+    'instructions7' => '',
+    'instructions8' => '',
+    'instructions9' => '',
     //what is febrile seiures
     'what_title' => 'What is febrile seizures?',
     'what_content1' => 'It is the most common type of convulsion seen among children',

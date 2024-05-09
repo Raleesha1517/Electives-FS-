@@ -142,49 +142,7 @@
 
            {{-- users --}}
             
-            <div class="col-12">
-              <div class="card top-selling overflow-auto">
-                
-                <a href="/admin/doctors" class="btn custombtn" style="margin: 10px 10px 10px 10px">Add New Doctor</a>
-                
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Patients <span>| All</span></h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">number</th>
-                        <th scope="col">Guardian Name</th>
-                        <th scope="col">Child Name</th>
-                        <th scope="col">Birthday</th>
-                        <th scope="col">PHN Number</th>
-                        <th scope="col">View More</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach ($patient as $index => $patient)
-                      <tr>
-                          <td>{{ $index + 1 }}</td>
-                          <td>{{ $patient->user->name }}</td> <!-- Assuming there's a relationship between Patient and User -->
-                          <td>{{ $patient->name }}</td>
-                          <td>{{ $patient->date_of_birth }}</td>
-                          <td>{{ $patient->user->phn }}</td>
-                          <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge bg-success">See More</span></a></td>
-                          <!-- Replace the delete links with the following -->
-                          <td>
-                            <a href="{{ route('admin.patients.delete', ['id' => $patient->id]) }}" class="delete-link" data-type="patient" data-id="{{ $patient->id }}" onclick="return confirm('Are you sure you want to delete this patient?')">
-                                <span class="badge bg-danger">delete</span>
-                            </a>
-                          </td>
-                      </tr>
-                  @endforeach
-                  
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            
 
             {{-- doctors --}}
 
@@ -233,7 +191,7 @@
 
           <div class="col-12">
             <div class="card top-selling overflow-auto">
-                <a href="/admin/add-admin" class="btn custombtn" style="margin: 10px 10px 10px 10px">Add New Admin</a>
+                <a href="/admin/admin" class="btn custombtn" style="margin: 10px 10px 10px 10px">Add New Admin</a>
                 
                 <div class="card-body pb-0">
                     <h5 class="card-title">Admins <span>| All</span></h5>
@@ -272,6 +230,46 @@
             </div>
         </div>
         
+        <div class="col-12">
+          <div class="card top-selling overflow-auto"> 
+            <div class="card-body pb-0">
+              <h5 class="card-title">Patients <span>| All</span></h5>
+
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">number</th>
+                    <th scope="col">Guardian Name</th>
+                    <th scope="col">Child Name</th>
+                    <th scope="col">Birthday</th>
+                    <th scope="col">PHN Number</th>
+                    <th scope="col">View More</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($patient as $index => $patient)
+                  <tr>
+                      <td>{{ $index + 1 }}</td>
+                      <td>{{ $patient->user->name }}</td> <!-- Assuming there's a relationship between Patient and User -->
+                      <td>{{ $patient->name }}</td>
+                      <td>{{ $patient->date_of_birth }}</td>
+                      <td>{{ $patient->user->phn }}</td>
+                      <td><a href="{{ route('doctors.viewPatientDetails', $patient->id) }}"><span class="badge bg-success">See More</span></a></td>
+                      <!-- Replace the delete links with the following -->
+                      <td>
+                        <a href="{{ route('admin.patients.delete', ['id' => $patient->id]) }}" class="delete-link" data-type="patient" data-id="{{ $patient->id }}" onclick="return confirm('Are you sure you want to delete this patient?')">
+                            <span class="badge bg-danger">delete</span>
+                        </a>
+                      </td>
+                  </tr>
+              @endforeach
+              
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
 
           </div>
         </div><!-- End Left side columns -->

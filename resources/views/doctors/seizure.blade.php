@@ -3,16 +3,14 @@
 
 @section('doctors.content')
 
-<main id="main" class="main">  background-color: #d3f9f4; /* Set button background color */
-    font-weight: bolder;
-    color: #0d5a5b;
+<main id="main" class="main">  
 
     <div class="container" >
         <div class="row justify-content-center">
             <div class="col-md-12" >
                 <div class="card" style="
                   background: linearr-gradient(to left, #a9e3db, #ffffff); 
-                  border: solid #60f0dd 2px; ">
+                  border: solid #0d5a5b 2px; ">
                   {{-- linear-gradient(to top, #91c7e3, #ffffff) --}}
                     <div class="card-header" style="margin-bottom: 10px; background: #d3f9f4; color: #0d5a5b; font-weight:bold" id="sinhala">
                       {{ __('common.SeizureRecord') }}</div>
@@ -25,7 +23,7 @@
                                 <label for="date" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Date') }}</label>
                                 <div class="col-sm-10">
                                     <input id="date" style="
-                                    border: solid #60f0dd 2px; " type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autofocus>
+                                    border: solid #0d5a5b 2px; " type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autofocus>
                                     @error('date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -39,7 +37,7 @@
                                 <label for="time" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Time') }}</label>
                                 <div class="col-sm-10">
                                     <input id="time" style="
-                                    border: solid #60f0dd 2px; " type="time" class="form-control @error('time') is-invalid @enderror" name="time" value="{{ old('time') }}" required>
+                                    border: solid #0d5a5b 2px; " type="time" class="form-control @error('time') is-invalid @enderror" name="time" value="{{ old('time') }}" required>
                                     @error('time')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -52,7 +50,7 @@
                                 <label for="temperature" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Temperature') }}</label>
                                 <div class="col-sm-10">
                                     <input id="temperature" style="
-                                    border: solid #60f0dd 2px; " type="number" step="0.01" class="form-control @error('temperature') is-invalid @enderror" name="temperature" value="{{ old('temperature') }}">
+                                    border: solid #0d5a5b 2px; " type="number" step="0.01" class="form-control @error('temperature') is-invalid @enderror" name="temperature" value="{{ old('temperature') }}">
                                     @error('temperature')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -66,12 +64,12 @@
                                 <div class="col-sm-10">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" style="
-                                    border: solid #60f0dd 2px; " type="radio" id="fever_yes" name="fever" value="1">
+                                    border: solid #0d5a5b 2px; " type="radio" id="fever_yes" name="fever" value="1">
                                         <label class="form-check-label" for="fever_yes" id="sinhala">{{ __('common.Yes') }}</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" style="
-                                    border: solid #60f0dd 2px; " type="radio" id="fever_no" name="fever" value="0">
+                                    border: solid #0d5a5b 2px; " type="radio" id="fever_no" name="fever" value="0">
                                         <label class="form-check-label" for="fever_no" id="sinhala">{{ __('common.No') }}</label>
                                     </div>
                                     @error('fever')
@@ -87,7 +85,7 @@
                                 <label for="duration" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Duration') }}</label>
                                 <div class="col-sm-10">
                                     <input id="duration" style="
-                                    border: solid #60f0dd 2px; " type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration') }}" required>
+                                    border: solid #0d5a5b 2px; " type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration') }}" required>
                                     @error('duration')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -100,7 +98,7 @@
                                 <label for="episode_number" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Episode') }}</label>
                                 <div class="col-sm-10">
                                     <input id="episode_number" style="
-                                    border: solid #60f0dd 2px; " type="number" class="form-control @error('episode_number') is-invalid @enderror" name="episode_number" value="{{ old('episode_number') }}" required>
+                                    border: solid #0d5a5b 2px; " type="number" class="form-control @error('episode_number') is-invalid @enderror" name="episode_number" value="{{ old('episode_number') }}" required>
                                     @error('episode_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -113,7 +111,7 @@
                                 <label for="description" class="col-sm-2 col-form-label" id="sinhala">{{ __('common.Description') }}</label>
                                 <div class="col-sm-10">
                                     <textarea id="description" style="
-                                    border: solid #60f0dd 2px; " class="form-control @error('description') is-invalid @enderror" name="description" rows="3" required>{{ old('description') }}</textarea>
+                                    border: solid #0d5a5b 2px; " class="form-control @error('description') is-invalid @enderror" name="description" rows="3" required>{{ old('description') }}</textarea>
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

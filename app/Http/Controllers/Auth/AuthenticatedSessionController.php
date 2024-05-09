@@ -7,7 +7,10 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 use Illuminate\View\View;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -41,8 +44,43 @@ class AuthenticatedSessionController extends Controller
             return redirect('users/dashboard');
         }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('welcome', absolute: false));
     }
+
+
+    public function showPPHNLoginForm(): View
+    {
+        return view('doctorlogin');
+    }
+
+    /**
+     * Handle an incoming phone number authentication request.
+     */
+    public function loginWithPHN(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'phn' => ['required', 'integer'],
+            'password' => ['required', 'string'],
+        ]);
+
+        $phn = $request->input('phn');
+
+        // Find the user by phone number
+        $user = User::where('phn', $phn)->first();
+
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            // Authentication failed
+            return back()->withErrors([
+                'phn' => 'The provided credentials do not match our records.',
+            ]);
+        }
+
+        // Authentication successful
+        Auth::login($user);
+
+        return redirect()->intended('users/dashboard');
+    }
+
 
     /**
      * Destroy an authenticated session.

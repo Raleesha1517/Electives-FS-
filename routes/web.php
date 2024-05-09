@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AwarenessController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Middleware\LocalizationMiddleware;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Doctor;
@@ -23,6 +24,8 @@ Route::middleware(LocalizationMiddleware::class)
     ->group(function ()
     {
         Route::get('/awareness', [AwarenessController::class, 'index'])->name('awareness.index');
+        Route::get('/PHNlogin', [AuthenticatedSessionController::class, 'showPPHNLoginForm'])->name('PHNlogin.loginWithPHN');
+        Route::post('/PHNlogin', [AuthenticatedSessionController::class, 'loginWithPHN']);
 
         // Route::get('/dashboard', function () {
         //     return view('dashboard');

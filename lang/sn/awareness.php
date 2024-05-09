@@ -4,6 +4,18 @@ return [
     'title' => 'උණ වලිප්පුව යනු සුව කළ හැකි රෝගයකි',
     'button' => 'තවත් කියවන්න',
 
+    //instructions
+    'instructions' => 'Instructions to use the Application >>',
+
+    'instructions1' => '',
+    'instructions2' => '',
+    'instructions3' => '',
+    'instructions4' => '',
+    'instructions5' => '',
+    'instructions6' => '',
+    'instructions7' => '',
+    'instructions8' => '',
+    'instructions9' => '',
     //what is febrile seiures
     'what_title' => 'උණ වලිප්පුව යනු කුමක්ද?',
     'what_content1' => 'එය ළමුන් අතර බහුලවම දක්නට ලැබෙන වලිප්පු ආකාරයයි.',

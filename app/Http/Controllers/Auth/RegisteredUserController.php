@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Patients;
 
 class RegisteredUserController extends Controller
 {
@@ -41,10 +42,19 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        Patients::create([
+            'user_id' => $user->id,
+            'name' => 'Not mentioned', // Default value for name
+            'guardian_name' => $user->name, // Set guardian name to user's name
+            // Add other fields as needed
+        ]);
+
+        \DB::statement('UPDATE users SET phn = 1045300 + (id - 1) * 13 WHERE id = ?', [$user->id]);
+
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('users.dashboard', absolute: false));
     }
 }

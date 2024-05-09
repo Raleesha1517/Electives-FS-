@@ -3,6 +3,20 @@
 return [
     'title' => 'காய்ச்சல் வலிப்பு ஒரு குணப்படுத்தக்கூடிய நோய்',
     'button' => 'மேலும் படிக்க',
+
+    //instructions
+    'instructions' => 'Instructions to use the Application >>',
+
+    'instructions1' => '',
+    'instructions2' => '',
+    'instructions3' => '',
+    'instructions4' => '',
+    'instructions5' => '',
+    'instructions6' => '',
+    'instructions7' => '',
+    'instructions8' => '',
+    'instructions9' => '',
+    
     //what is febrile seiures
     'what_title' => 'காய்ச்சல் வலிப்பு என்றால் என்ன?',
     'what_content1' => 'இது குழந்தைகளிடையே காணப்படும் மிகவும் பொதுவான வகை வலிப்பு',

@@ -9,6 +9,8 @@ use App\Models\Doctor;
 use App\Models\Seizure_records;
 // use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class DoctorController extends Controller
 {
@@ -96,9 +98,8 @@ class DoctorController extends Controller
         return redirect('/doctors/dashboard')->with('success', 'Patient added successfully.');
     }
 catch (\Exception $e) {
-    // Log or display the error
     dd($e->getMessage());
-    // Optionally, redirect back with an error message
+   
     return redirect()->back()->with('error', 'Failed to add patient: ' . $e->getMessage());
 }
     }
@@ -119,10 +120,6 @@ catch (\Exception $e) {
         return redirect('/doctors/dashboard')->with('delete', 'patient deleted successfully.');
     }
 
-    // public function view()
-    // {
-    //     return view('doctors.viewpatient');
-    // }
 
     public function createRecord($patientId)
     {

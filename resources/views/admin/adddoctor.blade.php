@@ -43,7 +43,7 @@
                 <input type="text" name="ward" id="inputWard" class="form-control" placeholder="Ward">
             </div>
             <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Add Doctor</button>
+                <button type="submit" class="btn custombtn">Add Doctor</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
         </form>

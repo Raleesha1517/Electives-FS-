@@ -61,6 +61,9 @@ background-size: cover; ">
 </div>
 @endif
 
+<div class="card" style="padding: 10px; padding-bottom: 10px">
+<p id="sinhala" style="align-items: center; text-align:center"><strong> {{__('common.PHN1')}} {{ $phn }} , {{__('common.PHN2')}} </strong> </p>
+</div>
 
     <div class="pagetitle">
      

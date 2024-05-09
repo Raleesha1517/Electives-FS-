@@ -8,7 +8,7 @@ return [
     'Register' => 'REGISTER',
 
     //user records
-    'PreviousSeizures' => 'Your Previous Seizures',
+    'PreviousSeizures' => 'Your Childs Previous Seizures',
     'TotalRecords' => 'Total Records',
     'Record' => 'Record',
     'Date' => 'Date',
@@ -40,4 +40,7 @@ return [
     'Back' => 'Back',
     'SeeMore' => 'See More',
     'Delete' => 'Delete',
+    'Reset' => 'Reset',
+    'PHN1' => 'Your PHN Number :', 
+    'PHN2' => 'Please Use this Number Along with Password for future logging for your profile', 
 ];

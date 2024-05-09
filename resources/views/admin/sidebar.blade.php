@@ -26,13 +26,13 @@
     </a>
 </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="pages-register.html">
           <i class="bi bi-card-list"></i>
           <span>Add Patient</span>
         </a>
-      </li>
-      <li class="nav-heading">Pages</li>
+      </li> --}}
+      {{-- <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="users-profile.html">
@@ -46,7 +46,7 @@
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+      </li><!-- End F.A.Q Page Nav --> --}}
 
     </ul>
 

@@ -55,6 +55,8 @@
                         
                         
                     </div>
+
+                   
                     <!-- Other fields in two columns -->
                     <div class="col-md-6">
                         <table class="borderless-table">
@@ -112,6 +114,9 @@
         <div class="card">
             <div class="card-header text-white" style="background-color: #117879; display: flex; justify-content: space-between;">
                 <p class="card-text" style="font-size: larger; margin: 0;"><strong>Seizure Records | Total records : {{ $totalRecords }}</strong></p>
+                <a href="/doctors/records/{{ $patient->id }}" id="sinhala">
+                    <span class="badge custombtn">{{__('common.SeizureRecord1')}}</span>
+                </a>    
             </div>
             <div class="card-body">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -169,9 +174,7 @@
         </div>
         
         
-        <a href="/doctors/records/{{ $patient->id }}" id="sinhala">
-            <span class="badge custombtn">{{__('common.SeizureRecord1')}}</span>
-        </a>
+        
         
         
         

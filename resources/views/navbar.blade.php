@@ -57,6 +57,10 @@
                 <a class="nav-link scrollto {{ Route::currentRouteName() == 'awareness.index' ? 'active' : '' }}" href="{{ route('awareness.index') }}">Awareness</a>
             </li>
 
+            <li>
+                <a class="nav-link scrollto"  href="{{ route('login') }}">Doctor</a>
+            </li>
+
           @if (Route::has('login'))
                 
                     @auth
@@ -80,7 +84,7 @@
                               class="getstarted scrollto">LOG OUT</a>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}" class="getstarted scrollto">LOG IN</a></li>
+                        <li><a href="{{ route('PHNlogin.loginWithPHN') }}" class="getstarted scrollto">LOG IN</a></li>
 
                         @if (Route::has('register'))
                             <li><a href="{{ route('register') }}" class=" getstarted scrollto">REGISTER</a></li>

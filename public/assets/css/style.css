@@ -626,6 +626,16 @@ section {
   padding: 7px;
   background-color: #117879;
 }
+
+.btn-inst{
+  color: white;
+}
+
+.btn-inst:hover{
+  background-color: #298686;
+  color: white;
+}
+
 .card .btn:hover{
   background-color: #1f8c8e;
   outline-color: #117879;
@@ -639,31 +649,36 @@ section {
 .w1{
   height: 350px;
   width: 350px;
+
 }
 
 .w2{
   height: 300px;
   width: 300px;
+  margin-left: 50px;
 }
 
 .r1{
   height: 300px;
   width: 300px;
+  margin-left: 75px;
 }
 
 .r2{
-  height: 250px;
-  width: 350px;
+  height: 300px;
+  width: 500px;
 }
 
 .r3{
   height: 250px;
-  width: 350px;
+  width: 450px;
 }
 
 .s1{
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 330px;
+  margin-top: 0px;
+  margin-left: 50px;
 }
 
 .s2{
@@ -672,36 +687,84 @@ section {
 }
 
 .s3{
-  height: 250px;
+  height: 350px;
   width: 350px;
 }
+
+.h1{
+  height: 330px;
+  width: 280px;
+  margin-left: 30px;
+}
+
+.h2{
+  height: 350px;
+  width: 300px;
+}
+
+.p1{
+  height: 350px;
+  width: 350px;
+  margin-left: 30px;
+}
+
+.p2{
+  height: 350px;
+  width: 350px;
+  margin-left: 30px;
+}
+
+.p3{
+  height: 300px;
+  width: 450px;
+}
+
+.p4{
+  height: 250px;
+  width: 250px;
+  margin-left: 30px;
+}
+
+.p5{
+  height: 350px;
+  width: 400px;
+}
+
+.p6{
+  height: 350px;
+  width: 400px;
+}
+
+
+
 /* Define the image size for medium and larger screens */
 .img-md1 {
   height: 200px ;
-  width: 300px ;
+  width: 150px ;
+  margin-left: 20px;
 }
 
 .img-md2 {
   height: 150px ;
-  width: 300px ;
+  width: 150px ;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-right: 50%;
 }
 .img-md3 {
   height: 180px ;
-  width: 180px ;
+  width: 120px ;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-right: 50%;
+  margin-right: 40%;
 }
 
 .img-md4 {
   height: 150px ;
-  width: 800px ;
+  width: 350px ;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-right: 50%;
+  margin-right: 60%;
 }
 
 /* Define the image size for smaller screens (e.g., mobile devices) */
